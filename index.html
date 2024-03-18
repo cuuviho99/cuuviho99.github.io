@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="btn-voting" style="height: 100%;">
+            <div class="voting"  
+            style=  "
+                        color:#183153;
+                        cursor:pointer;
+                        width:100px;
+                        position:absolute; 
+                        bottom:10px;
+                        left:10px;
+                        opacity:0.6;
+                    ">
+            <div class="star" style="display:inline-block;">
+                <i class="fa-solid fa-star" style="font-size:25px;"></i>
+            </div>
+               
+            <span class="voting--notice" style="font-size: 14px;"><span class="num--people__rated"></span> People Gifted Star</span> 
+            </div>
+            
+        </div>
+        <div class="volume-feature">
+            <div class="volume-bar">
+                <input type="range" class="process-volume" name="volume" id="" value=0  min="0" max="100">
+            </div>
+            <div class="ico">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="store app">
+                <div class="store__header">
+                    <span>Store</span>
+                    <h2 class="header__name">Cửa hàng âm nhạc</h2>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" spellcheck=false placeholder="Search..">
+                    <button class="search-button">
+                      <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="stock-music">
+    
+                </div>
+            </div>
+            <div class="music--app app">
+                <div class="header">
+                    <span>Now playing: </span>
+                    <h2 class="header__name">Xin Anh Đừng</h2>
+                </div>
+                <div class="cd">
+                    <div class="cd--thumb">
+                        
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="control return">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </div>
+                    <div class="control prev">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </div>
+                    <div class="control play--ui">
+                        <i class="play--ico fa-solid fa-play"></i>
+                        <i class="play--ico fa-solid fa-pause"></i>
+                    </div>
+                    <div class="control next">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </div>
+                    <div class="control random">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                </div>
+                <audio id="audio" src=""></audio>
+                <div class="process--bar">
+                    <input type="range" name="ProcessMusic" id="process" class="process" value=0  min="0" max="100" >
+                </div>
+                <div class="playlist">
+                </div>
+            </div>
+            
+        </div>
+      
+    </div>
+    <div class="cre"><a href="https://FB.com/HoangXinhVaiLon">
+        <font color="#ffffff">HoangNguyen ♥ </font></a><br>
+        Version 1.0(test)
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js" integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+    <script src="./anim.js"></script>
+    <script src="./voting.js"></script>  
+</body>
+</html>
