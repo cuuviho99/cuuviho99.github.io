@@ -11,28 +11,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
+    <script>
+  if (/Android|iPhone|iPad|iPod|Windows Phone|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent)) {
+    window.location.href = "indexM.html";
+  }
+</script>
+
 </head>
 <body>
+<!-- Popup -->
+<div class="popup-blur" id="landingModal">
+  <div class="popup-card">
+ <img src="./Popup.png" alt="">
+    <div class="popup-text">
+      <h2>自分月じの⾳楽を聴う</h2>
+      <p>Listen to your own music</p>
+      <button class="popup-explore" id="btnExplore">EXPLORE NOW</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* --- Popup --- */
+.popup-blur {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+.popup-blur[open] { display: grid; animation: fadeIn .3s ease; }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+
+.popup-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: min(900px, 90vw);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+}
+.popup-card img {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.popup-text {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+.popup-explore {
+margin-top: 10px;
+padding: 10px 20px;
+border-radius: 999px;
+border: 2px solid #e14ba3;
+background: rgba(255,182,210,0.25);
+color: #e14ba3;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.popup-explore:hover {
+background: rgba(255,182,210,0.45);
+transform: translateY(-1px);
+}
+.popup-explore:active {
+transform: translateY(0);
+background: rgba(255,182,210,0.6);
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  font-size: 18px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+const modal = document.getElementById('landingModal');
+const btnExplore = document.getElementById('btnExplore');
+
+function openModal() { modal.setAttribute('open',''); }
+function closeModal() { modal.removeAttribute('open'); }
+
+window.addEventListener('load', openModal);
+btnExplore.addEventListener('click', closeModal);
+</script>
+
+
     <div class="container">
-        <div class="btn-voting" style="height: 100%;">
-            <div class="voting"  
-            style=  "
-                        color:#183153;
-                        cursor:pointer;
-                        width:100px;
-                        position:absolute; 
-                        bottom:10px;
-                        left:10px;
-                        opacity:0.6;
-                    ">
-            <div class="star" style="display:inline-block;">
-                <i class="fa-solid fa-star" style="font-size:25px;"></i>
-            </div>
-               
-            <span class="voting--notice" style="font-size: 14px;"><span class="num--people__rated"></span> People Gifted Star</span> 
-            </div>
-            
-        </div>
+        
         <div class="volume-feature">
             <div class="volume-bar">
                 <input type="range" class="process-volume" name="volume" id="" value=0  min="0" max="100">
@@ -104,6 +185,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js" integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./script.js"></script>
     <script src="./anim.js"></script>
-    <script src="./voting.js"></script>  
+      
 </body>
 </html>
